@@ -2,11 +2,15 @@ using NUnit.Framework;
 
 namespace Allure_Test_Project
 {
-    public class Tests
+    using NUnit.Allure.Core;
+
+    [AllureNUnit]
+    public class FailedOnetimeSetup
     {
-        [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
+            Assert.AreEqual(0,1);
         }
 
         [Test]
